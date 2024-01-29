@@ -3,4 +3,4 @@
   hosts: localhost
   tasks:
     - name: Gather File System Usage 
-      ansible.builtin.command: "df -h" 
+      ansible.builtin.command: "df -h ; sar" 

@@ -2,5 +2,5 @@
 - name: Check Disk Utilization and Store in File.
   hosts: localhost
   tasks:
-    - name: Gather File System Usage 
+    - name: Gather File System Usage .
       ansible.builtin.command: "df -h" 

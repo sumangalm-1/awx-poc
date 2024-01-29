@@ -1,0 +1,6 @@
+---
+- name: Check CPU Utilization and Store in File
+  hosts: localhost
+  tasks:
+    - name: Gather File System Usage 
+      ansible.builtin.command: "df -h" 

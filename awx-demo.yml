@@ -4,4 +4,3 @@
   tasks:
     - name: Gather File System Usage 
       ansible.builtin.command: "df -h" 
-  

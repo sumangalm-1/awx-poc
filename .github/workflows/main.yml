@@ -3,8 +3,10 @@ on:
   push:
     branches: [ main ]
 jobs:
-    Job1:
-        name: Job1
+    build:
         runs-on: ubuntu-latest
         if: github.ref == 'refs/heads/main'
+        steps:
+            -   name: trigger
+                run: echo "Hii"
        

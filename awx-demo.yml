@@ -1,5 +1,5 @@
 ---
-- name: Check Disk Utilization and Store in File.
+- name: Check Disk Utilization and Store in File
   hosts: localhost
   tasks:
     - name: Gather File System Usage

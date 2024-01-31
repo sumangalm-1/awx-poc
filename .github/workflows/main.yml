@@ -9,4 +9,5 @@ jobs:
         steps:
             -   name: trigger
                 run: echo "Hii"
+                if: ${{ success() }}
        

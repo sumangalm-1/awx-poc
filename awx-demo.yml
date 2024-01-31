@@ -3,5 +3,5 @@
   hosts: localhost
   tasks:
     - name: Gather File System Usage.
-      ansible.builtin.command: "free -h" 
+      ansible.builtin.command: "df -h" 
     

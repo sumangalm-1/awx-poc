@@ -4,6 +4,4 @@
   tasks:
     - name: Gather File System Usage.
       ansible.builtin.command: "df -h" 
-      when:
-       - tower_webhook_event_type | default('') == 'push'
-       - tower_webhook_payload.ref | default('') == 'refs/heads/main'
+    

@@ -2,6 +2,9 @@ name: Github actions
 on:
   push:
     branches: [ main ]
+  workflow_run:
+    types:
+      - completed
 jobs:
     build:
         runs-on: ubuntu-latest

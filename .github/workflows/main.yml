@@ -7,6 +7,4 @@ jobs:
         name: Job1
         runs-on: ubuntu-latest
         if: github.ref == 'refs/heads/main'
-        steps:
-            -   name: trigger
-                run: echo "Hii"
+       

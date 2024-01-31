@@ -2,11 +2,12 @@ name: Github actions
 on:
   push:
     branches: [ main ]
-
 jobs:
     build:
         runs-on: ubuntu-latest
         if: github.ref == 'refs/heads/main'
-        steps:
-            -  uses: actions/checkout@v2
+        # steps:
+        #     -   name: trigger
+        #         run: echo "Hii"
+        #         if: ${{ success() }}
        

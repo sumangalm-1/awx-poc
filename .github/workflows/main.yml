@@ -8,6 +8,5 @@ jobs:
         runs-on: ubuntu-latest
         if: github.ref == 'refs/heads/main'
         steps:
-            -   name: trigger
-                if: ${{ success() }}
+            -  uses: actions/checkout@v2
        

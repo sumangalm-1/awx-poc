@@ -3,4 +3,4 @@
   hosts: localhost
   tasks:
     - name: Gather && File System Usage for testing...***..&
-      ansible.builtin.command: "free -h" 
+      ansible.builtin.command: "free -h" lk

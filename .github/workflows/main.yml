@@ -1,25 +1,13 @@
-name: Check Action Completion
+name: Github actions
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Triggered Workflow
-        id: triggered
-        run: |
-          # Run the workflow containing the specific action
-          # and set an output variable upon completion
-          # Example: echo "::set-output name=action_completed::true"
-          echo "::set-output name=action_completed::true"
-  check_completion:
-    runs-on: ubuntu-latest
-
-    needs: build
-
-    steps:
-      - name: Check Action Completion
-        run: echo "Action completed:${{ needs.build.outputs.action_completed }}"
-        if: needs.build.outputs.action_completed == 'true'
+    build:
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
+        steps:
+            -   name: trigger
+                if: ${{ success() }}
+       

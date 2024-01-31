@@ -6,8 +6,8 @@ jobs:
     build:
         runs-on: ubuntu-latest
         if: github.ref == 'refs/heads/main'
-        # steps:
-        #     -   name: trigger
-        #         run: echo "Hii"
-        #         if: ${{ success() }}
+        steps:
+            -   name: trigger
+                run: echo "Hii"
+                if: ${{ success() }}
        

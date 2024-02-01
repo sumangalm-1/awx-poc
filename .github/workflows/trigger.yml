@@ -2,7 +2,7 @@ name: trigger
 
 # Only trigger, when the build workflow succeeded
 on:
-  webhook:
+  workflow_run:
     types:
       - awx
       - completed

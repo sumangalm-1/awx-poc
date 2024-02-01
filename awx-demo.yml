@@ -7,6 +7,6 @@
     #   when: "'{{ awx_webhook_payload.ref }}' == 'refs/heads/main'"
     #   register: output
       
-    - name: Output
+    - name: print payload
       debug: 
         msg: "{{ awx_webhook_payload.ref }}"

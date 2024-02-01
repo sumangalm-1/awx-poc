@@ -2,11 +2,12 @@
 - name: Check Disk Utilization and Store in File.
   hosts: localhost
   tasks:
+    - name: print payload
+      debug: 
+        msg: "{{ awx_webhook_payload.ref }}"
     - name: Gather File System Information .
-      ansible.builtin.command: "df -h" 
+      ansible.builtin.command: echo "Hiii"
       when: awx_webhook_payload.ref == "refs/heads/main"
 
       
-    # - name: print payload
-    #   debug: 
-    #     msg: "{{ awx_webhook_payload.ref }}"
+   

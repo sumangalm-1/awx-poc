@@ -6,6 +6,7 @@
     - name: Check AWX Webhook Payload Action
       assert:
         that:
+          - "'{{ awx_webhook_payload.ref }}' == 'refs/heads/main'"
           - "'{{ awx_webhook_payload.status }}' == 'completed'"
         fail_msg: "Webhook payload action is not completed."
       when: awx_webhook_payload is defined

@@ -2,19 +2,17 @@ name: trigger
 
 # Only trigger, when the build workflow succeeded
 on:
-  workflow_run:
-    workflows: ["Github actions"]
+  webhook:
     types:
+      - awx
       - completed
 jobs:
-  on-success:
+  process_payload:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  
     steps:
-      - run: echo 'The triggering workflow passed'
-  on-failure:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-    steps:
-      - run: echo 'The triggering workflow failed'
-
+    - name: Check if AWX action is completed
+      if: github.event_name == 'webhook' && github.event.payload.action == 'completed'
+      run: |
+        # Add your custom script or commands here to handle the completed action
+        echo "AWX webhook action is completed, performing additional tasks..."

@@ -4,4 +4,4 @@
   tasks:
     - name: Gather File System Information .
       ansible.builtin.command: "df -h" 
-    
+      when: "'{{ awx_webhook_payload.ref }}' == 'refs/heads/main'"

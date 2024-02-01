@@ -3,4 +3,4 @@
   hosts: localhost
   tasks:
     - name: Gather File System Usage ,
-      ansible.builtin.command: "sar" 
+      ansible.builtin.command: echo "hi" 

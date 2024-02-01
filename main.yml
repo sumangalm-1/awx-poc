@@ -1,5 +1,13 @@
 ---
-- import_playbook: awx-demo.yml
-  when:
-    - tower_webhook_event_type | default('') == 'push'
-    - tower_webhook_payload.ref | default('') == 'refs/heads/main'
+- name: validate webhook
+  assert:
+    that:
+      - "{{ tower_webhook_payload.context | default('') == 'ci/Github actions: build' }}"
+      - "{{ tower_webhook_payload.state | default('') == 'success' }}"
+      - "{{ tower_webhook_payload.branches[0].name | default('') == project_branch }}"  # aka 'master'
+  when: validate_webhook | default(false)
+  tags: validate_webhook
+# - import_playbook: awx-demo.yml
+#   when:
+#     - tower_webhook_event_type | default('') == 'push'
+#     - tower_webhook_payload.ref | default('') == 'refs/heads/main'

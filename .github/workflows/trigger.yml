@@ -12,7 +12,7 @@ jobs:
   
     steps:
     - name: Check if AWX action is completed
-      if: github.event_name == 'webhook' && github.event.payload.action == 'completed'
+      if: awx_webhook_event_type == 'workflow_job' &&  awx_webhook_payload.action == 'completed'
       run: |
         # Add your custom script or commands here to handle the completed action
         echo "AWX webhook action is completed, performing additional tasks..."

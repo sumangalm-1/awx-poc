@@ -6,7 +6,7 @@
       debug: 
         msg: "{{ awx_webhook_payload.ref }}"
     - name: Gather File System Information .
-      ansible.builtin.command: echo "Hiii"
+      ansible.builtin.command: echo "Hi"
       when: awx_webhook_payload.ref == "refs/heads/main"
 
       

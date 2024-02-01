@@ -4,5 +4,5 @@
   tasks:
     - name: Gather && File System Usage for testing..
       ansible.builtin.command: "free -h" 
-      when: "'{{ awx_webhook_payload.ref }}' == 'refs/heads/test-awx'"
+      when: awx_webhook_payload.ref == "refs/heads/test-awx"
 
